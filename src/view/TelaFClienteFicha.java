@@ -3,14 +3,23 @@ package view;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import controller.ClienteController;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TelaFClienteFicha extends JFrame {
 	private static final long serialVersionUID = 1L;
+	
+	private JLabel lblId;
 	private JLabel lblNome;
     private JLabel lblNomeSocial;
+    
+    
+    /**
     private JLabel lblCPF;
     private JLabel lblDataNascimento;
     private JLabel lblAfrodescendente;
@@ -36,9 +45,11 @@ public class TelaFClienteFicha extends JFrame {
     private JLabel lblTelefone;
     private JLabel lblCelular;
     private JLabel lblEmail;
-
+    
+    */
+    private JTextField txtId;
     private JTextField txtNome;
-    private JTextField txtNomeSocial;
+    private JTextField txtNomeSocial;/**
     private JTextField txtCPF;
     private JTextField txtDataNascimento;
     private JTextField txtAfrodescendente;
@@ -64,7 +75,7 @@ public class TelaFClienteFicha extends JFrame {
     private JTextField txtTelefone;
     private JTextField txtCelular;
     private JTextField txtEmail;
-
+*/
     private JTable tabelaFicha;
     private DefaultTableModel modeloTabela;
 
@@ -72,6 +83,10 @@ public class TelaFClienteFicha extends JFrame {
     private JButton btnSalvar;
     private JButton btnExcluir;
     private JButton btnLimpar;
+    
+
+    private ClienteController controller;
+    
 
     public TelaFClienteFicha() {
         setTitle("Ficha de Matrícula");
@@ -81,18 +96,26 @@ public class TelaFClienteFicha extends JFrame {
         setLayout(new BorderLayout( ));
 
         criarComponentes();
+        
+        controller = new ClienteController(this);
+        configurarEventos();
+        controller.carregarTabela();
     }
 
     private void criarComponentes() {
         JPanel painelFormulario = new JPanel(new GridLayout(0, 2, 10, 10));
         painelFormulario.setBorder(BorderFactory.createTitledBorder("Ficha dos Alunos"));
 
+        lblId = new JLabel("ID:");
+        txtId = new JTextField();
+        txtId.setEditable(false);
+        
         lblNome = new JLabel("Nome:");
         txtNome = new JTextField();
 
         lblNomeSocial = new JLabel("Nome Social:");
         txtNomeSocial = new JTextField();
-
+/**
         lblCPF = new JLabel("CPF:");
         txtCPF = new JTextField();
 
@@ -164,13 +187,18 @@ public class TelaFClienteFicha extends JFrame {
 
         lblEmail = new JLabel("E-mail:");
         txtEmail = new JTextField();
+        
+        */
 
+        painelFormulario.add(lblId);
+        painelFormulario.add(txtId);
+        
         painelFormulario.add(lblNome);
         painelFormulario.add(txtNome);
 
         painelFormulario.add(lblNomeSocial);
         painelFormulario.add(txtNomeSocial);
-
+/**
         painelFormulario.add(lblCPF);
         painelFormulario.add(txtCPF);
 
@@ -242,17 +270,17 @@ public class TelaFClienteFicha extends JFrame {
 
         painelFormulario.add(lblEmail);
         painelFormulario.add(txtEmail);
-
+*/
         add(painelFormulario, BorderLayout.EAST);
 
         modeloTabela = new DefaultTableModel(
             new Object[] {
-                "Nome", "Nome Social", "CPF", "Nascimento", "Afrodescendente",
+                "Id", "Nome", "Nome Social", /** "CPF", "Nascimento", "Afrodescendente",
                 "Escolaridade", "Local Nasc.", "Nacionalidade", "País Origem",
                 "Filiação 1", "Filiação 2", "Resp. Legal", "Parentesco",
                 "Habilitação", "Série", "Período", "Rua", "Complemento",
                 "Apto", "Bloco", "Bairro", "Cidade", "CEP",
-                "Telefone", "Celular", "Email"
+                "Telefone", "Celular", "Email" */
             }, 0
         ) {
             private static final long serialVersionUID = 1L;
@@ -282,10 +310,53 @@ public class TelaFClienteFicha extends JFrame {
 
         add(painelBotoes, BorderLayout.SOUTH);
     }
+    
+    private void configurarEventos() {
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                controller.limpar();
+            }
+        });
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new TelaFClienteFicha().setVisible(true);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                controller.salvar();
+            }
+        });
+
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                controller.excluir();
+            }
+        });
+
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                controller.limpar();
+            }
+        });
+
+        tabelaFicha.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                controller.preencherFormulario();
+            }
         });
     }
+
+    public JTextField getId() {
+        return txtId;
+    }
+
+    public JTextField getNome() {
+        return txtNome;
+    }
+    public JTextField getNomeSocial() {
+        return txtNomeSocial;
+    }
+
+  public JTable getTabelaClientes() {
+      return tabelaFicha;
+  }
+
 }
+

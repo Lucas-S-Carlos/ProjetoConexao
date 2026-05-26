@@ -4,7 +4,7 @@ public class Cliente {
 
     private int id;
     private String nome;
-    private String nomeSocial;
+    private String nomeSocial; /**
     private String cpf;
     private String dataNascimento;
     private String afrodescendente;
@@ -29,7 +29,22 @@ public class Cliente {
     private String telefone;
     private String celular;
     private String email;
+    */
+    public Cliente() {
+    }
 
+    public Cliente(String nome, String nomeSocial) {
+        this.nome = nome;
+        this.nomeSocial = nomeSocial;
+    }
+
+    public Cliente(int id, String nome, String nomeSocial) {
+        this.id = id;
+        this.nome = nome;
+        this.nomeSocial = nomeSocial;
+    }
+
+    
     public int getId() {
         return id;
     }
@@ -53,7 +68,7 @@ public class Cliente {
     public void setNomeSocial(String nomeSocial) {
         this.nomeSocial = nomeSocial;
     }
-
+/**
     public String getCpf() {
         return cpf;
     }
@@ -244,5 +259,5 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }
