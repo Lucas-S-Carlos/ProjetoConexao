@@ -4,7 +4,7 @@ public class Cliente {
 
     private int id;
     private String nome;
-    private String nomeSocial; /**
+    private String nomeSocial; 
     private String cpf;
     private String dataNascimento;
     private String afrodescendente;
@@ -29,19 +29,67 @@ public class Cliente {
     private String telefone;
     private String celular;
     private String email;
-    */
+   
     public Cliente() {
     }
 
-    public Cliente(String nome, String nomeSocial) {
+    public Cliente(String nome, String nomeSocial, String cpf, String dataNascimento, String afrodescendente, String escolaridadePublica, String localNascimento, String nacionalidade, String paisOrigem, String filiacao1,String filiacao2,String responsavelLegal,String grauParentesco,String habilitacao,String serieModulo,String periodo,String ruaAvenida,String complemento,String apto,String bloco,String bairro,String cidade,String cep,String telefone,String celular,String email) {
         this.nome = nome;
         this.nomeSocial = nomeSocial;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.afrodescendente = afrodescendente;
+        this.escolaridadePublica = escolaridadePublica;
+        this.localNascimento = localNascimento;
+        this.nacionalidade = nacionalidade;
+        this.paisOrigem = paisOrigem;
+        this.filiacao1 = filiacao1;
+        this.filiacao2 = filiacao2;
+        this.responsavelLegal = responsavelLegal;
+        this.grauParentesco = grauParentesco;
+        this.habilitacao = habilitacao;
+        this.serieModulo = serieModulo;
+        this.periodo = periodo;
+        this.ruaAvenida = ruaAvenida;
+        this.complemento = complemento;
+        this.apto = apto;
+        this.bloco = bloco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.email = email;
     }
 
-    public Cliente(int id, String nome, String nomeSocial) {
+    public Cliente(int id, String nome, String nomeSocial, String cpf, String dataNascimento, String afrodescendente, String escolaridadePublica, String localNascimento, String nacionalidade, String paisOrigem, String filiacao1,String filiacao2,String responsavelLegal,String grauParentesco,String habilitacao,String serieModulo,String periodo,String ruaAvenida,String complemento,String apto,String bloco,String bairro,String cidade,String cep,String telefone,String celular,String email) {
         this.id = id;
         this.nome = nome;
         this.nomeSocial = nomeSocial;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.afrodescendente = afrodescendente;
+        this.escolaridadePublica = escolaridadePublica;
+        this.localNascimento = localNascimento;
+        this.nacionalidade = nacionalidade;
+        this.paisOrigem = paisOrigem;
+        this.filiacao1 = filiacao1;
+        this.filiacao2 = filiacao2;
+        this.responsavelLegal = responsavelLegal;
+        this.grauParentesco = grauParentesco;
+        this.habilitacao = habilitacao;
+        this.serieModulo = serieModulo;
+        this.periodo = periodo;
+        this.ruaAvenida = ruaAvenida;
+        this.complemento = complemento;
+        this.apto = apto;
+        this.bloco = bloco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.email = email;
     }
 
     
@@ -68,7 +116,7 @@ public class Cliente {
     public void setNomeSocial(String nomeSocial) {
         this.nomeSocial = nomeSocial;
     }
-/**
+
     public String getCpf() {
         return cpf;
     }
@@ -259,5 +307,5 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
-    }*/
+    }
 }

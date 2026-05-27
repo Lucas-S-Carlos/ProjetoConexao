@@ -17,40 +17,56 @@ public class TelaFClienteFicha extends JFrame {
 	private JLabel lblId;
 	private JLabel lblNome;
     private JLabel lblNomeSocial;
-    
-    
-    /**
-    private JLabel lblCPF;
+    private JLabel lblCpf;
     private JLabel lblDataNascimento;
     private JLabel lblAfrodescendente;
+    
     private JLabel lblEscolaridadePublica;
     private JLabel lblLocalNascimento;
     private JLabel lblNacionalidade;
     private JLabel lblPaisOrigem;
+    
     private JLabel lblFiliacao1;
+    
     private JLabel lblFiliacao2;
+    
     private JLabel lblResponsavelLegal;
+    
     private JLabel lblGrauParentesco;
+    
     private JLabel lblHabilitacao;
+    
     private JLabel lblSerie;
+    
     private JLabel lblPeriodo;
+    
 
     private JLabel lblRua;
+    
     private JLabel lblComplemento;
+    
     private JLabel lblApto;
+    
     private JLabel lblBloco;
+    
     private JLabel lblBairro;
+    
     private JLabel lblCidade;
+    
     private JLabel lblCep;
+    
     private JLabel lblTelefone;
+    
     private JLabel lblCelular;
+    
     private JLabel lblEmail;
     
-    */
+    
+    
     private JTextField txtId;
     private JTextField txtNome;
-    private JTextField txtNomeSocial;/**
-    private JTextField txtCPF;
+    private JTextField txtNomeSocial;
+    private JTextField txtCpf;
     private JTextField txtDataNascimento;
     private JTextField txtAfrodescendente;
     private JTextField txtEscolaridadePublica;
@@ -75,7 +91,7 @@ public class TelaFClienteFicha extends JFrame {
     private JTextField txtTelefone;
     private JTextField txtCelular;
     private JTextField txtEmail;
-*/
+
     private JTable tabelaFicha;
     private DefaultTableModel modeloTabela;
 
@@ -115,9 +131,9 @@ public class TelaFClienteFicha extends JFrame {
 
         lblNomeSocial = new JLabel("Nome Social:");
         txtNomeSocial = new JTextField();
-/**
-        lblCPF = new JLabel("CPF:");
-        txtCPF = new JTextField();
+
+        lblCpf = new JLabel("CPF:");
+        txtCpf = new JTextField();
 
         lblDataNascimento = new JLabel("Data de Nascimento:");
         txtDataNascimento = new JTextField();
@@ -188,7 +204,7 @@ public class TelaFClienteFicha extends JFrame {
         lblEmail = new JLabel("E-mail:");
         txtEmail = new JTextField();
         
-        */
+        
 
         painelFormulario.add(lblId);
         painelFormulario.add(txtId);
@@ -198,9 +214,9 @@ public class TelaFClienteFicha extends JFrame {
 
         painelFormulario.add(lblNomeSocial);
         painelFormulario.add(txtNomeSocial);
-/**
-        painelFormulario.add(lblCPF);
-        painelFormulario.add(txtCPF);
+
+        painelFormulario.add(lblCpf);
+        painelFormulario.add(txtCpf);
 
         painelFormulario.add(lblDataNascimento);
         painelFormulario.add(txtDataNascimento);
@@ -270,17 +286,17 @@ public class TelaFClienteFicha extends JFrame {
 
         painelFormulario.add(lblEmail);
         painelFormulario.add(txtEmail);
-*/
+
         add(painelFormulario, BorderLayout.EAST);
 
         modeloTabela = new DefaultTableModel(
             new Object[] {
-                "Id", "Nome", "Nome Social", /** "CPF", "Nascimento", "Afrodescendente",
+                "Id", "Nome", "Nome Social", "CPF",  "Nascimento", "Afrodescendente",
                 "Escolaridade", "Local Nasc.", "Nacionalidade", "País Origem",
                 "Filiação 1", "Filiação 2", "Resp. Legal", "Parentesco",
                 "Habilitação", "Série", "Período", "Rua", "Complemento",
                 "Apto", "Bloco", "Bairro", "Cidade", "CEP",
-                "Telefone", "Celular", "Email" */
+                "Telefone", "Celular", "Email"
             }, 0
         ) {
             private static final long serialVersionUID = 1L;
@@ -353,10 +369,99 @@ public class TelaFClienteFicha extends JFrame {
     public JTextField getNomeSocial() {
         return txtNomeSocial;
     }
+    public JTextField getCpf() {
+        return txtCpf;
+    }
+    public JTextField getDataNascimento() {
+        return txtDataNascimento;
+    }
+    public JTextField getAfrodescendente() {
+        return txtAfrodescendente;
+    }
+    public JTextField getEscolaridadePublica() {
+        return txtEscolaridadePublica;
+    }
+    public JTextField getLocalNascimento() {
+        return txtLocalNascimento;
+    }
+    public JTextField getNacionalidade() {
+        return txtNacionalidade;
+    }
+    public JTextField getPaisOrigem() {
+        return txtPaisOrigem;
+    }
+    public JTextField getFiliacao1() {
+        return txtFiliacao1;
+    }
+
+    public JTextField getFiliacao2() {
+        return txtFiliacao2;
+    }
+
+    public JTextField getResponsavelLegal() {
+        return txtResponsavelLegal;
+    }
+
+    public JTextField getParentesco() {
+        return txtGrauParentesco;
+    }
+
+    public JTextField getHabilitacao() {
+        return txtHabilitacao;
+    }
+
+    public JTextField getSerie() {
+        return txtSerie;
+    }
+
+    public JTextField getPeriodo() {
+        return txtPeriodo;
+    }
+
+    public JTextField getRua() {
+        return txtRua;
+    }
+
+    public JTextField getComplemento() {
+        return txtComplemento;
+    }
+
+    public JTextField getApto() {
+        return txtApto;
+    }
+
+    public JTextField getBloco() {
+        return txtBloco;
+    }
+
+    public JTextField getBairro() {
+        return txtBairro;
+    }
+
+    public JTextField getCidade() {
+        return txtCidade;
+    }
+
+    public JTextField getCep() {
+        return txtCep;
+    }
+
+    public JTextField getTelefone() {
+        return txtTelefone;
+    }
+
+    public JTextField getCelular() {
+        return txtCelular;
+    }
+
+    public JTextField getEmail() {
+        return txtEmail;
+    }
+   
+
 
   public JTable getTabelaClientes() {
       return tabelaFicha;
-  }
-
+  } 
 }
 
